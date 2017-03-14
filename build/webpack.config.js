@@ -98,7 +98,11 @@ webpackConfig.module.loaders = [{
   test: /\.(js|jsx)$/,
   exclude: /node_modules/,
   loader: 'babel',
-  query: config.compiler_babel
+  query: config.compiler_babel,
+        plugins: [
+          ['import',[{libraryName:"antd",style:'css'}]],
+        ],
+        cacheDirectory: true
 }, {
   test: /\.json$/,
   loader: 'json'
